@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="./form.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<body>
+  <nav class="navbar">
+    <img src="./logo/Delhi_Skill_and_Entrepreneurship_logo.png" alt="logo">
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div class="controls" id="controls">
+      <a href="#home" class="absent">Home</a>
+      <a href="#mailing" class="absent">Mailing</a>
+      <a href="#academic" class="absent">Academic</a>
+      <a href="#upload" class="absent">Upload</a>
+      <a href="#personal" class="absent">Personal</a>
+    </div>
+  </nav>
+  <section class="outer-section" id="home">
+
+    <div class="center">
+      <h1>Registration Form</h1>
+    </div>
+    <!-- form 1 personal_information -->
+    <form id="personal-info" onsubmit="return  validatePersonalInformation()" method="post">
+      <section class="personal-information main-content">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div class="form-row">
+            <label for="ApplicantName">Applicant's Name: </label>
+            <input type="text" id="ApplicantName" name="ApplicantName" placeholder="Enter Applicant's Name" />
+          </div>
+
+          <div class="form-row">
+            <label for="FatherName">Father's Name: </label>
+            <input type="text" id="FatherName" name="FatherName" placeholder="Enter Father's Name" />
+          </div>
+
+          <div class="form-row">
+            <label for="MotherName">Mother's Name: </label>
+            <input type="text" id="MotherName" name="MotherName" placeholder="Enter Mother's Name" />
+          </div>
+
+          <div class="form-row">
+            <label for="AdhaarnNumber">Adhaar Number:</label>
+            <input type="text" name="AdhaarNumber" id="AdhaarNumber" placeholder="Enter your Adhaar" />
+          </div>
+
+          <div class="form-row">
+            <label for="date-of-birth">Date of Birth: </label>
+            <input type="date" id="date-of-birth" name="date-of-birth" />
+          </div>
+
+          <div class="form-row">
+            <label for="Nationality">Nationality: </label>
+            <select name="Nationality" id="Nationality">
+              <option disabled selected>select</option>
+              <option value="India">India</option>
+              <option value="Non-Indian">Non-indian</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="Religion">Religion: </label>
+            <select name="Religion" id="Religion">
+              <option disabled selected>select</option>
+              <option value="Hindu">Hindu</option>
+              <option value="Muslim">Muslim</option>
+              <option value="Sikh">Sikh</option>
+              <option value="Christan">Christan</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="Category">Category: </label>
+            <select name="Category" id="Category">
+              <option disabled selected>select</option>
+              <option value="General">General</option>
+              <option value="OBC">OBC</option>
+              <option value="Sc/st">Sc/st</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="Disablity">Person with Disablity:</label>
+            <select name="Disablity" id="Disablity">
+              <option disabled selected>select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="only-child">Are You Only Child:</label>
+            <select name="only-child" id="only-child">
+              <option selected disabled>select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </fieldset>
+        <div class="buttontag">
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+        </div>
+      </section>
+    </form>
+
+    <!-- form 2 mailing_address -->
+    <form id="mailing" onsubmit="return  validateMailingAddress()" method="post">
+      <section class="Mailing-address main-content">
+        <fieldset>
+          <legend>Mailing Address</legend>
+          <div class="form-row">
+            <label for="Address">Address: </label>
+            <input type="text" id="Address" name="Address" placeholder="" />
+          </div>
+
+          <div class="form-row">
+            <label for="City">City: </label>
+            <input type="text" name="City" id="City" placeholder="" />
+          </div>
+
+          <div class="form-row">
+            <label for="State">State: </label>
+            <input type="text" name="State" id="State" placeholder="" />
+          </div>
+
+          <div class="form-row">
+            <label for="PinCode">Pin Code:</label>
+            <input type="text" id="PinCode" name="PinCode" placeholder="" />
+          </div>
+
+          <div class="form-row">
+            <label for="PhoneNumber">Phone Number:</label>
+            <input type="text" name="PhoneNumber" id="PhoneNumber" placeholder="" />
+          </div>
+
+          <div class="form-row">
+            <label for="EmailAddress">Email Address: </label>
+            <input type="text" name="EmailAddress" id="EmailAddress" />
+          </div>
+
+          <div class="form-row">
+            <label for="SetPassword">Set Password: <span class="eye-icon" id="SetPasswordEye"
+                onclick="togglePasswordVisibility('SetPassword')">&#128065;</span><br><br></label>
+            <input type="password" name="SetPassword" id="SetPassword" />
+
+          </div>
+
+          <div class="form-row">
+            <label for="ConfirmPassword">Confirm Password: <span class="eye-icon" id="ConfirmPasswordEye"
+                onclick="togglePasswordVisibility('ConfirmPassword')">&#128065;</span><br><br> </label>
+            <input type="password" name="ConfirmPassword" id="ConfirmPassword" />
+
+          </div>
+
+        </fieldset>
+        <div class="buttontag">
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+
+      </section>
+
+    </form>
+
+    <!-- form 3 academic_detail -->
+    <form id="academic">
+      <section class="academic-detail main-content">
+        <fieldset>
+          <legend>Academic Detail</legend>
+          <div class="academic-content-flex">
+            <div class="row" id="row-detail">
+              <div>S.No.</div>
+              <div>Exam Passed</div>
+              <div>Board / University</div>
+              <div>Passing Year</div>
+              <div>Percentage</div>
+            </div>
+
+            <div class="row" id="row1">
+              <div>1</div>
+              <div>
+                <select name="exam-passed" id="exam">
+                  <option selected disabled>select</option>
+                  <option value="exam-1"> exam1</option>
+                  <option value="exam-2"> exam2</option>
+                  <option value="exam-3"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="board-university" id="board">
+                  <option selected disabled>select</option>
+                  <option value="board1"> exam1</option>
+                  <option value="board2"> exam2</option>
+                  <option value="board3"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="passing-year" id="year">
+                  <option selected disabled>select</option>
+                  <option value="passing1">2020</option>
+                  <option value="passing2">2021</option>
+                  <option value="passing3">2022</option>
+                  <option value="passing4">2023</option>
+                  <option value="passing5">2024</option>
+                </select>
+              </div>
+              <div>
+                <input type="text" name="percentage" id="exam1-percentage">
+              </div>
+            </div>
+
+            <div class="row" id="row2">
+              <div>2</div>
+              <div>
+                <select name="exam-passed" id="exam">
+                  <option selected disabled>select</option>
+                  <option value="exam12"> exam1</option>
+                  <option value="exam123"> exam2</option>
+                  <option value="exam1234"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="board-university" id="board2">
+                  <option value="board-university" selected disabled>select</option>
+                  <option value="board-university"> exam1</option>
+                  <option value="board-university"> exam2</option>
+                  <option value="board-university"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="passing-year" id="year2">
+                  <option value="passing-year" selected disabled>select</option>
+                  <option value="passing-year">2020</option>
+                  <option value="passing-year">2021</option>
+                  <option value="passing-year">2022</option>
+                  <option value="passing-year">2023</option>
+                  <option value="passing-year">2024</option>
+                </select>
+              </div>
+              <div>
+                <input type="text" name="percentage" id="exam1-percentage">
+              </div>
+            </div>
+
+            <div class="row" id="row3">
+              <div>3</div>
+              <div>
+                <select name="exam-passed" id="exam">
+                  <option value="exam-passed" selected disabled>select</option>
+                  <option value="exam-passed"> exam1</option>
+                  <option value="exam-passed"> exam2</option>
+                  <option value="exam-passed"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="board-university" id="board3">
+                  <option value="board-university" selected disabled>select</option>
+                  <option value="board-university"> exam1</option>
+                  <option value="board-university"> exam2</option>
+                  <option value="board-university"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="passing-year" id="year4">
+                  <option value="passing-year" selected disabled>select</option>
+                  <option value="passing-year">2020</option>
+                  <option value="passing-year">2021</option>
+                  <option value="passing-year">2022</option>
+                  <option value="passing-year">2023</option>
+                  <option value="passing-year">2024</option>
+                </select>
+              </div>
+              <div>
+                <input type="text" name="percentage" id="exam1-percentage">
+              </div>
+            </div>
+            <div class="row" id="row4">
+              <div>4</div>
+              <div>
+                <select name="exam-passed" id="exam">
+                  <option value="exam-passed" selected disabled>select</option>
+                  <option value="exam-passed"> exam1</option>
+                  <option value="exam-passed"> exam2</option>
+                  <option value="exam-passed"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="board-university" id="board4">
+                  <option value="board-university" selected disabled>select</option>
+                  <option value="board-university"> exam1</option>
+                  <option value="board-university"> exam2</option>
+                  <option value="board-university"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="passing-year" id="year">
+                  <option value="passing-year" selected disabled>select</option>
+                  <option value="passing-year">2020</option>
+                  <option value="passing-year">2021</option>
+                  <option value="passing-year">2022</option>
+                  <option value="passing-year">2023</option>
+                  <option value="passing-year">2024</option>
+                </select>
+              </div>
+              <div>
+                <input type="text" name="percentage" id="exam1-percentage">
+              </div>
+            </div>
+
+            <div class="row" id="row5">
+              <div>5</div>
+              <div>
+                <select name="exam-passed" id="exam">
+                  <option value="exam-passed" selected disabled>select</option>
+                  <option value="exam-passed"> exam1</option>
+                  <option value="exam-passed"> exam2</option>
+                  <option value="exam-passed"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="board-university" id="board5">
+                  <option value="board-university" selected disabled>select</option>
+                  <option value="board-university"> exam1</option>
+                  <option value="board-university"> exam2</option>
+                  <option value="board-university"> exam3</option>
+                </select>
+              </div>
+              <div>
+                <select name="passing-year" id="year">
+                  <option value="passing-year" selected disabled>select</option>
+                  <option value="passing-year">2020</option>
+                  <option value="passing-year">2021</option>
+                  <option value="passing-year">2022</option>
+                  <option value="passing-year">2023</option>
+                  <option value="passing-year">2024</option>
+                </select>
+              </div>
+              <div>
+                <input type="text" name="percentage" id="exam1-percentage">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="buttontag">
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+      </section>
+    </form>
+
+  </section>
+  <script src="./form.js"></script>
+</body>
+
+</html>
